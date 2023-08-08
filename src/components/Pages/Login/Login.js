@@ -12,9 +12,6 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import title from "../../../Assets/DLF VENTURES LOGO.png";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import Vibration from "@mui/icons-material/Vibration";
-import DataObject from "@mui/icons-material/DataObject";
-import TableViewOutlinedIcon from "@mui/icons-material/TableViewOutlined";
 import { minimap } from "../../../minimap";
 import { Typography } from "@mui/material";
 
