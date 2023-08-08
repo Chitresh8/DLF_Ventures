@@ -1,20 +1,22 @@
 import React, { Fragment, useState } from "react";
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
-import wareHouse from "../../../Assets/Screenshot 2023-06-18 153454.png";
+import wareHouse from "../../../Assets/Warehouse management Illustration concept on white background.jpg";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import Scanner from "../../../Assets/ScannerScreenshot 2023-06-18 153607.png";
-import poweredBy from "../../../Assets/Screenshot 2023-06-18 153520.png";
-import managedBy from "../../../Assets/Screenshot 2023-06-18 153542.png";
 import Box from "@mui/material/Box";
-import simple from "../../../Assets/ScreenshotSimple 2023-06-18 210136.png";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import title from "../../../Assets/Screenshot 2023-06-13 125831.png";
+import title from "../../../Assets/DLF VENTURES LOGO.png";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import Vibration from "@mui/icons-material/Vibration";
+import DataObject from "@mui/icons-material/DataObject";
+import TableViewOutlinedIcon from "@mui/icons-material/TableViewOutlined";
+import { minimap } from "../../../minimap";
+import { Typography } from "@mui/material";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -64,6 +66,7 @@ const Login = () => {
               <img
                 src={title}
                 alt="title"
+                style={{ width: "70px", height: "60px" }}
               />
               <Box sx={{ marginTop: "20px" }}>
                 <Button
@@ -79,6 +82,7 @@ const Login = () => {
             <img
               src={wareHouse}
               alt="wareHouse"
+              style={{ width: "500px", height: "500px" }}
             />
           </Box>
           <Box
@@ -91,7 +95,7 @@ const Login = () => {
             <p>
               Our Application provides for an end-to-end digital warehousing
               solution specialising in medium to large scale warehouse
-              management.Developed by Mastek and managed by DLF
+              management.Developed by DLF Ventures & managed by DLF
               Solutions.Warehouse 360 delivers state of the art and quality
               required to meet today's needs for warehouse management.
             </p>
@@ -102,24 +106,52 @@ const Login = () => {
             <LinkedInIcon style={{ color: "04048C" }} />
             <InstagramIcon style={{ color: "04048C" }} />
           </Box>
-          <Box sx={{ marginLeft: "550px", marginTop: "-150px" }}>
-            <img
-              src={simple}
-              alt="simple"
-            />
+          <Box
+            sx={{
+              marginLeft: "550px",
+              marginTop: "-250px",
+              width: "269px",
+              height: "100px",
+              fontSize: "small",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              flexDirection: "row",
+              flexWrap: "wrap",
+            }}
+          >
+            {minimap.map((el) => {
+              return (
+                <Box
+                  sx={{
+                    display: "flex",
+                    gap: "20px",
+                    marginBottom: "5px",
+                    paddingBottom: "5px",
+                  }}
+                  key={el.id}
+                >
+                  <Box>{el.icon}</Box>
+                  <Box>
+                    <Typography variant="h6">{el.htag}</Typography>
+                    <Typography variant="p">{el.ptag}</Typography>
+                  </Box>
+                </Box>
+              );
+            })}
           </Box>
         </Box>
         <Box
           sx={{
             backgroundColor: "#1f4f7e",
-            width: "400px",
-            height: "110vh",
+            width: "334px",
+            height: "121vh",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
             flexDirection: "column",
             marginLeft: "1000px",
-            marginTop: "-110vh",
+            marginTop: "-97vh",
             fontSize: "small",
           }}
         >
@@ -128,7 +160,12 @@ const Login = () => {
               src={Scanner}
               alt="Scanner"
             />
-            <Box sx={{ alignItems: "left", padding: "10px" }}>
+            <Box
+              sx={{
+                alignItems: "left",
+                padding: "10px",
+              }}
+            >
               <h1>Login to your Account</h1>
               <label>Username*</label>
               <TextField
@@ -189,14 +226,7 @@ const Login = () => {
                 marginBottom: "0px",
               }}
             >
-              <img
-                src={poweredBy}
-                alt="poweredBy"
-              />
-              <img
-                src={managedBy}
-                alt="managedBy"
-              />
+              Powered by DLF Ventures
             </Box>
           </Box>
         </Box>

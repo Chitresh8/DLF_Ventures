@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import image from "../../../Assets/Screenshot 2023-06-13 125831.png";
+import image from "../../../Assets/DLF VENTURES LOGO.png";
 import { Box, Button } from "@mui/material";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -28,7 +28,6 @@ const Header = () => {
           </Button>
         ) : null}
       </Box>
-      <Box></Box>
     </Fragment>
   );
 };
