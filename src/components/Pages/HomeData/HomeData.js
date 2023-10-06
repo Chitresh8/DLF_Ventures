@@ -23,8 +23,8 @@ import {
   setEmailActions,
   setFusionUserActions,
   setMobileUserActions,
-  setResetActions,
-  setResetTwoActions,
+  // setResetActions,
+  // setResetTwoActions,
   setSearchActions,
 } from "../../../store/actions/home.actions";
 import { useNavigate } from "react-router-dom";
@@ -35,22 +35,22 @@ export const HomeData = () => {
 
   useEffect(() => {
     dispatch(setDataActions(dataas));
-  }, []);
+  }, [dispatch]);
 
   const selectedData = useSelector((state) => state.home.selectedData);
 
   const mobileUserInputs = useSelector(
     (state) => state.home.mobileUserNameInput
   );
-  console.log("mobileUserInput", mobileUserInputs);
+  // console.log("mobileUserInput", mobileUserInputs);
 
   const emailUserInputs = useSelector((state) => state.home.emailInput);
 
   const fusionUserInputs = useSelector((state) => state.home.fusionUserInput);
 
-  const search = useSelector((state) => state.home.searchData);
+  // const search = useSelector((state) => state.home.searchData);
 
-  const resetTwo = useSelector((state) => state.home.selectedResetTwo);
+  // const resetTwo = useSelector((state) => state.home.selectedResetTwo);
 
   const apiD = useSelector((state) => state.home.apiData);
 
@@ -70,10 +70,10 @@ export const HomeData = () => {
   };
 
   const searchClickHandler = () => {
-    const mapMastekData = apiD.filter((el) => {
+    const mapdlfData = apiD.filter((el) => {
       return el.mobileUserName.toLowerCase().includes(mobileUserInputs);
     });
-    const emailInputBox = mapMastekData.filter((el) => {
+    const emailInputBox = mapdlfData.filter((el) => {
       return el.email.toLowerCase().includes(emailUserInputs);
     });
     const fusionUserInputBox = emailInputBox.filter((el) => {
@@ -300,8 +300,8 @@ export const HomeData = () => {
 //   const [mobileUserInput, setMobileUserInput] = useState("");
 //   const [emailInput, setEmailInput] = useState("");
 //   const [fusionUserInput, setFusionUserInput] = useState("");
-//   // const [mastekData, setMastekData] = useState(myData);
-//   // const [dupMastekData, setDupMastekData] = useState(myData);
+//   // const [dlfData, setdlfData] = useState(myData);
+//   // const [dupdlfData, setDupdlfData] = useState(myData);
 
 //   const mobileUserChangeHandler = (event) => {
 //     setMobileUserInput(event.target.value);
@@ -316,14 +316,14 @@ export const HomeData = () => {
 //   };
 
 //   const searchClickHandler = () => {
-//     // const mapMastekData = mastekData.filter((el) => {
+//     // const mapdlfData = dlfData.filter((el) => {
 //     //   return (
 //     //     el.mobileUserName.toLowerCase().includes(mobileUserInput) ||
 //     //     mobileUserInput === ""
 //     //   );
 //     // });
 
-//     const emailChange = mapMastekData.filter((el) => {
+//     const emailChange = mapdlfData.filter((el) => {
 //       return el.email.includes(emailInput) || emailInput === "";
 //     });
 //     // console.log(emailChange, "email");
@@ -335,7 +335,7 @@ export const HomeData = () => {
 //   //   });
 
 //   //   // console.log(fusionChange, "fusion");
-//   //   setDupMastekData(fusionChange);
+//   //   setDupdlfData(fusionChange);
 //   // };
 
 //   const data = JSON.stringify(dataas);
@@ -345,7 +345,7 @@ export const HomeData = () => {
 //     setMobileUserInput("");
 //     setEmailInput("");
 //     setFusionUserInput("");
-//     // setDupMastekData(mastekData);
+//     // setDupdlfData(dlfData);
 //   };
 //   return (
 //     <Fragment>
@@ -464,7 +464,7 @@ export const HomeData = () => {
 //             </TableRow>
 //           </TableHead>
 //           <TableBody>
-//             {/* {dupMastekData.map((el) => {
+//             {/* {dupdlfData.map((el) => {
 //               return (
 //                 <TableRow key={el.id}>
 //                   <TableCell>{el.mobileUserName}</TableCell>
